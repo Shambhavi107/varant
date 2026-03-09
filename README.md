@@ -1,71 +1,70 @@
-<div align="center">
-  <img src="public/hero-bg.png" alt="Varant - The Ancient Council" width="100%" />
-</div>
-
 # Varant
-_The ancient council. For modern bets._
 
-<p align="center">
-  <a href="https://varant.ai"><strong>varant.ai</strong></a> · 
-  <a href="#the-philosophy">Philosophy</a> · 
-  <a href="#the-sabha">Architecture</a> · 
-  <a href="#quick-start">Run Local</a>
-</p>
+> The ancient council. For modern bets.
 
----
+Varant is a computational decisioning engine. It maps the 2,500-year-old Indian intellectual tradition of deliberate, structured judgment (Nyaya Shastra, Arthashastra) onto modern computing primitives. It is designed for founders making irreversible bets.
 
-## 🏛️ Overview
+We do not optimize for the objective answer. We optimize for the decision-making process.
 
-Every civilization that built something lasting had a formal council tradition—a deliberate space where irreversible decisions were examined from every angle before a verdict was rendered. In India, this was the **Sabha**. 
+## Architecture
 
-*Chanakya's Arthashastra codified it.*
-*The Mahabharata dramatized it.*
-*The Nyaya and Tarka schools formalized it into a science.*
+Varant operates via a multi-agent closed-loop heuristic system called the **Sabha**:
 
-**Varant** brings the Sabha back. It is a highly specialized architecture mapping ancient heuristic protocols onto modern compute primitives. We don't optimize for the "best answer." We optimize for the best decision-making process.
+* **Vitarka (Node_01):** Pure Logic. Deliberate counter-reasoning mapping exact mechanical risks.
+* **Asha (Node_02):** Upside Theory. Calculates mathematical upper-bound success potential.
+* **Yukti (Node_03):** Practical Vector. Applied wisdom constrained by real-world resources.
+* **Vipaksha (Node_04):** The Opposition. Adversarial reframing of the foundational premise.
 
-## ⚖️ The 4 Voices (The Sabha)
+These heuristics deliberate across a 3-round protocol (Pratham Paksha, Khandana, Nirnaya), generating an unalterable narrative ledger of your decision (The Shastra).
 
-The core architecture operates using 4 distinct heuristics that map the complete risk surface of your decision:
+## System Requirements
 
-- **🔴 Node_01 // Vitarka (Pure Logic):** Deliberate counter-reasoning. Finds every flaw and maps the exact mechanical risks of the proposition.
-- **🟢 Node_02 // Asha (Upside Theory):** The rising possibility. Calculates mathematical upper-bound success potential where others see blockers.
-- **🟡 Node_03 // Yukti (Practical Vector):** Applied wisdom. Demands to know exactly what actually works right now given your real-world resource constraints.
-- **🔵 Node_04 // Vipaksha (The Opposition):** The adversary. Explicitly built to reframe the entire question and attack the foundational premise of your worldview.
+* Node.js 18.17+
+* OpenRouter API Key (for LLM routing)
+* macOS, Linux, or Windows (WSL2)
 
-## 📜 The Platform Primitives
+## Installation
 
-1. **The Prashna (The Essential Question):** The system interrupts you with the one deeply uncomfortable question you have been avoiding.
-2. **The Shastra (The Record):** An authoritative, written memo detailing exactly what was weighed, why it was chosen, and your exact *Matra* (confidence score).
-3. **The Smriti (The Memory):** A complete longitudinal ledger of your decisions, exposing your blindspots and forcing your judgment to compound over time.
-
----
-
-## 💻 Tech Stack
-
-- **Framework:** [Next.js](https://nextjs.org/) (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS + Shadcn UI
-- **Animations:** GSAP & ScrollTrigger
-- **Typography:** Playfair Display, Inter, Lora, Archivo
-
-## 🚀 Quick Start
-
-To run the Varant engine locally:
+Clone the repository and install dependencies:
 
 ```bash
-# Install dependencies
+git clone https://github.com/yashpanchalhq/varant.git
+cd varant
 npm install
+```
 
-# Initialize development server
+## Configuration
+
+Varant requires specific environment variables to interface with the LLM routing layer. Duplicate the environment template:
+
+```bash
+cp .env.example .env.local
+```
+
+Required variables:
+```env
+OPENROUTER_API_KEY="sk-or-v1-..."
+```
+
+## Initialization
+
+Start the local engine:
+
+```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to convene your Sabha.
+The system will mount at `http://localhost:3000`. 
+To bypass the landing overview and directly access the engine interface, navigate to `http://localhost:3000/demo`.
 
----
+## Data Privacy & Telemetry
 
-<div align="center">
-  <p><i>Decide like it can't be undone.</i></p>
-  <p><b>Built in India. For founders everywhere.</b></p>
-</div>
+Varant is designed for existential business decisions. 
+* All session data (Smriti) currently remains localized to your instance.
+* We do not capture telemetry during the Sabha deliberation phase.
+* LLM provider retention policies apply according to your OpenRouter configuration. Use zero-retention models for sensitive data.
+
+## License
+
+Copyright © 2026 Varant. All rights reserved.
+Built in India.
