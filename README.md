@@ -1,3 +1,8 @@
+<br/>
+<div align="center">
+  <img src="./public/hero-bg.png" alt="Varant Engine Landing" width="100%" style="border-radius: 8px; margin-bottom: 2rem;" />
+</div>
+
 # Varant
 
 > The ancient council. For modern bets.
