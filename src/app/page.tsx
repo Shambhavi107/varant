@@ -358,9 +358,9 @@ export default function VarantLandingPage() {
           <div className="flex flex-wrap gap-16 md:gap-24">
             <div className="flex flex-col gap-4">
               <h4 className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#1A1510] mb-2">Sources</h4>
-              <Link href="#" className="text-sm text-[#666] hover:text-[#9B1C1C] transition-colors">Nyaya Sutras</Link>
-              <Link href="#" className="text-sm text-[#666] hover:text-[#9B1C1C] transition-colors">Arthashastra</Link>
-              <Link href="#" className="text-sm text-[#666] hover:text-[#9B1C1C] transition-colors">Mimamsa Rules</Link>
+              <Link href="/nyaya-sutras" className="text-sm text-[#666] hover:text-[#9B1C1C] transition-colors">Nyaya Sutras</Link>
+              <Link href="/arthashastra" className="text-sm text-[#666] hover:text-[#9B1C1C] transition-colors">Arthashastra</Link>
+              <Link href="/mimamsa-rules" className="text-sm text-[#666] hover:text-[#9B1C1C] transition-colors">Mimamsa Rules</Link>
             </div>
             <div className="flex flex-col gap-4">
               <h4 className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#1A1510] mb-2">Platform</h4>
