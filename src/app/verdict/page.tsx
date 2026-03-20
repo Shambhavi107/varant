@@ -11,13 +11,25 @@ import { useChime } from "@/hooks/useChime";
 import Link from "next/link";
 import InterruptionModal from "@/components/InterruptionModal";
 
-function exportShastra(question: string, verdictRaw: string) {
-  const content = `SHASTRA — वरन्त निर्णय पत्र\n${"=".repeat(40)}\n\nDECISION\n"${question}"\n\n${verdictRaw}\n\n${"=".repeat(40)}\nVarant — The Ancient Council. For Modern Bets.`;
-  const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+import jsPDF from "jspdf";
+
+async function exportShastra(
+  question: string,
+  verdict: VerdictData,
+  matraScore: number,
+) {
+  const res = await fetch("/api/shastra", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ question, verdict, matraScore }),
+  });
+  const blob = await res.blob();
+  const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = `shastra-${Date.now()}.txt`;
+  a.href = url;
+  a.download = `shastra-${Date.now()}.pdf`;
   a.click();
+  URL.revokeObjectURL(url);
 }
 function parseVerdict(raw: string): VerdictData {
   const sections: Record<string, string> = {};
@@ -466,7 +478,9 @@ export default function VerdictScreen() {
             </button>
 
             <button
-              onClick={() => exportShastra(question, rawVerdict)}
+              onClick={() =>
+                exportShastra(question, verdict, verdict.confidence)
+              }
               className="border border-[#E8E3DC] text-[#1A1510] px-6 py-3 rounded-full text-[14px] font-medium hover:border-[#D97706]/40 transition-all"
             >
               📜 Export Shastra
